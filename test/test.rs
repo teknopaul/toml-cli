@@ -15,6 +15,18 @@ fn help_if_no_args() {
     assert!(stderr.contains("-h, --help"));
 }
 
+fn run_get(input: &[u8], query: &[u8]) -> Result<str, str> {
+    // WORK HERE input -> tempfile
+    let tempfile = "";
+    let proc = process::Command::new(get_exec_path())
+        .arg("get").arg(tempfile).arg(query)
+        .output()
+        .unwrap();
+    if !proc.status.success() {
+        // WORK HERE
+    }
+}
+
 fn get_exec_path() -> PathBuf {
     // TODO is there no cleaner way to get this from Cargo?
     // Also should it really be "debug"?
