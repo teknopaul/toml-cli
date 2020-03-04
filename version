@@ -1,0 +1,3 @@
+# naturally this woudl be a lot easier with toml itself
+VERSION=$(awk '/^version = /{print $3}' Cargo.toml|tr -d '"')
+
